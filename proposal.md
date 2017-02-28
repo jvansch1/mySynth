@@ -4,7 +4,7 @@
 
 MySynth is a digital single-oscillator synthesizer which is fully functional as a musical instrument. Users will be able to use a musical keyboard to send through MIDI signals which will interact with mySynth. Users can also affect the synthesizers filter, LFO and add effects to truly craft their own unique sounds. mySynth includes a visual representation of the current sound wave so the user can see the effect their action has on the physical audio wave.
 
-## Functionality
+## Functionality and MVP
 * Send input through computer or MIDI keyboard
 * Select between sin, square, and sawtooth waveforms
 * presets so that users can see the power of MySynth
