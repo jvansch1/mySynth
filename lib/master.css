@@ -1,25 +1,236 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  font-family: sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
 .key {
-  height: 100px;
-  width: 20px;
+  padding-top: 10px;
+  height: 150px;
+  width: 50px;
   border: 1px solid black;
+  text-align: center;
 }
 
 #delay-settings {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 150px;
+  padding: 10px;
 }
 
 #phaser-settings {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 10px;
+  height: 150px;
 }
 
 #envelope-settings {
   border: 1px solid black;
+  height: 120px;
+  width: 150px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#envelope-settings section span {
+  display: flex;
+  flex-direction: column;
+}
+
+#envelope-settings input{
+  /*transform: rotate(270deg);*/
 }
 
 #overdrive-settings {
   border: 1px solid black;
+  height: 150px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 #keyboard-container {
   display: flex;
+  /*margin: 0 auto;*/
+}
+
+#key-and-env-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-right: 20px;
+}
+
+#reverb-settings {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#filter-settings {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+
+
+.accidental {
+  background: black;
+  color: white;
+
+}
+
+.red {
+  background: red;
+}
+
+
+#canvas-container {
+  width: 100%;
+  text-align: center;
+}
+
+canvas {
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 5px;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -6px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+#main-controls {
+  padding-top: 10px;
+  margin-left: 20px;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#effect-settings {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+button {
+  font-weight: 600;
+  background-image: url('../images/metallic-background_1048-1942.jpg');
+  border-radius: 1px;
+  border-style: none;
+  width: 150px;
+  color: white;
+  margin: 0 auto;
+}
+
+option {
+  background: green;
+}
+
+select.soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 150px;
 }
