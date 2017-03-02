@@ -21,17 +21,50 @@
       <div id='keyboard-container'>
         Keyboard!
       </div>
+      <button onclick='octaveUp();'>
+        Octave Up
+      </button>
+      <button onclick='octaveDown();'>
+        Octave Down
+      </button>
+
       <form>
         <select id='wave-select' onChange='changeWaveForm()'>
           <option value="sine">sine</option>
           <option value="square">square</option>
           <option value="sawtooth">saw</option>
+          <option value="triangle">triangle</option>
         </select>
+        Volume
+        <input onchange='changeGain()'id='gain-setting' type='range' min='0' max='1' step='0.01' value='1'>
+
+        <section id='envelope-settings'>
+          Attack Time
+          <input onchange='changeAttack()' id='attack-slider' type='range' min='0' max='2000' step='1' value='0'>
+
+          </input>
+          Delay Time
+          <input onchange='changeDecay()' id='decay-slider' type='range' min='0' max='2000' step='1' value='0'>
+
+          </input>
+          Sustain
+          <input onchange='changeSustain()' id='sustain-slider' type='range' min='0' max='1' step='0.05' value='0.2'>
+
+          </input>
+        </section>
+
+
         <section id='delay-settings'>
           Delay Time
           <input id='delay-slider' onchange='changeDelayTime()' type='range' min='0' max='1' step='0.01' value='0'>
           Feedback delay
           <input id='delay-feedback-slider' onchange='changeDelayFeedback()' type='range' min='0' max='1' step='0.01' value='0'>
+          Wet
+          <input id='delay-wet-slider' onchange='changeDelayWet()' type='range' min='0' max='1' step='0.01' value='0'>
+          ON
+          <input onclick='bypassDelay()'id='delay-toggle' type="checkbox">
+
+          </input>
         </section>
 
         <section id='phaser-settings'>
@@ -39,6 +72,30 @@
           <input id='phaser-depth' onchange='changePhaserDepth()' type='range' min='0' max='1' step='0.01' value='0'>
           Phaser feedback
           <input id='phaser-feedback' onchange='changePhaserFeedback()' type='range' min='0' max='1' step='0.01' value='0'>
+          ON
+          <input onclick='bypassPhaser()' type='checkbox' id='phaser-toggle'>
+
+          </input>
+
+        </section>
+
+        <section id='overdrive-settings'>
+          Drive
+          <input id='overdrive-drive-slider' onchange='changeOverDriveDrive()' type='range' min='0' max='1' step='0.01' value='0'>
+          Output Gain
+          <input id='overdrive-output-slider' onchange='changeOverDriveGain()' type='range' min='0' max='1' step='0.01' value='0'>
+          <select id='drive-type'onchange='changeOverDriveType()'>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+          </select>
+          ON
+          <input onclick='bypassOverDrive()' type="checkbox" id='overdrive-toggle'>
+
+          </input>
         </section>
 
         Filter Frequency
