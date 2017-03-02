@@ -8,6 +8,18 @@
   border: 1px solid black;
 }
 
+#phaser-settings {
+  border: 1px solid black;
+}
+
+#envelope-settings {
+  border: 1px solid black;
+}
+
+#overdrive-settings {
+  border: 1px solid black;
+}
+
 #keyboard-container {
   display: flex;
 }
