@@ -37,7 +37,7 @@
           <option value="triangle">triangle</option>
         </select>
         Volume
-        <input onchange='changeGain()'id='gain-setting' type='range' min='0' max='1' step='0.01' value='1'>
+        <input onchange='changeGain()'id='gain-setting' type='range' min='0' max='0.1' step='0.01' value='1'>
 
         Detune
         <input onchange='changeDetune()' id='detune-settings' type='range' min='0' max='100' step='0.01' value='1'>
@@ -104,6 +104,10 @@
           <input id='phaser-depth' onchange='changePhaserDepth()' type='range' min='0' max='1' step='0.01' value='0'>
           Phaser feedback
           <input id='phaser-feedback' onchange='changePhaserFeedback()' type='range' min='0' max='1' step='0.01' value='0'>
+          Phaser Rate
+          <input id='phaser-rate' onchange='changePhaserRate()' type='range' min='0' max='8' step='0.1' value='0'>
+          Phaser Stereo
+          <input id='phaser-stereo' onchange='changePhaserStereo()' type='range' min='0' max='180' step='1' value='0'>
           ON
           <input onclick='bypassPhaser()' type='checkbox' id='phaser-toggle'>
 
@@ -113,9 +117,11 @@
 
         <section id='overdrive-settings'>
           Drive
-          <input id='overdrive-drive-slider' onchange='changeOverDriveDrive()' type='range' min='0' max='1' step='0.01' value='0'>
+          <input id='overdrive-drive-slider' onchange='changeOverDriveDrive()' type='range' min='0.01' max='1' step='0.01' value='0.01'>
           Output Gain
-          <input id='overdrive-output-slider' onchange='changeOverDriveGain()' type='range' min='0' max='1' step='0.01' value='0'>
+          <input id='overdrive-output-slider' onchange='changeOverDriveGain()' type='range' min='0.01' max='1' step='0.01' value='0.01'>
+          Curve Amount
+          <input id='overdrive-curve-slider' onchange='changeOverDriveCurve()' type='range' min='0.01' max='1' step='0.01' value='0.01'>
           <select class='soflow'id='drive-type'onchange='changeOverDriveType()'>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -153,7 +159,7 @@
           <input id='filter-gain-slider' onchange='changeFilterGain()' type='range' min='-40' max='40' step='1' value='-40'>
 
           Filter Type
-          <select id='filter-type-dropdown' onchange='changeFilterType()'>
+          <select class='soflow' id='filter-type-dropdown' onchange='changeFilterType()'>
             <option value='lowpass'>lowpass</option>
             <option value='highpass'>highpass</option>
             <option value='bandpass'>bandpass</option>
