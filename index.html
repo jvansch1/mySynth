@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8">
     <script src="lib/my_synth.js" charset="utf-8"></script>
-    <script src="lib/knob.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tunajs/0.4.4/tuna-min.js" type="text/javascript"></script>
     <script type="text/javascript" src='lib/main.js'>
-
     </script>
     <link rel="stylesheet" href="lib/master.css">
     <title></title>
@@ -17,9 +15,6 @@
     document.addEventListener("DOMContentLoaded", () => {
       setup();
       draw();
-      $(function() {
-        $(".dial").knob();
-    });
     })
     </script>
     <section id='key-and-env-container'>
@@ -43,12 +38,14 @@
         <input onchange='changeDetune()' id='detune-settings' type='range' min='0' max='100' step='0.01' value='1'>
 
       </section>
-
-      <div id='keyboard-container'>
-        Keyboard!
-      </div>
+      <section id='keyboard-background'>
+        <div id='keyboard-container'>
+          Keyboard!
+        </div>
+      </section>
 
       <section id='envelope-settings'>
+        <span class='effect-title'>Envelope</span>
         <span>
 
           <p>A</p>
@@ -86,20 +83,24 @@
       <section id='effect-settings'>
 
       <section id='delay-settings'>
+        <span class='effect-title'>Delay</span>
         Delay Time
         <input id='delay-slider' onchange='changeDelayTime()' type='range' min='0' max='1' step='0.01' value='0'>
         Feedback delay
         <input id='delay-feedback-slider' onchange='changeDelayFeedback()' type='range' min='0' max='1' step='0.01' value='0'>
         Wet
         <input id='delay-wet-slider' onchange='changeDelayWet()' type='range' min='0' max='1' step='0.01' value='0'>
-        ON
-        <input onclick='bypassDelay()'id='delay-toggle' type="checkbox">
+        <section class='active-check'>
+          Active
+          <input onclick='bypassDelay()'id='delay-toggle' type="checkbox">
+        </section>
 
       </input>
     </section>
 
 
         <section id='phaser-settings'>
+          <span class='effect-title'>Phaser</span>
           Phaser Depth
           <input id='phaser-depth' onchange='changePhaserDepth()' type='range' min='0' max='1' step='0.01' value='0'>
           Phaser feedback
@@ -108,14 +109,17 @@
           <input id='phaser-rate' onchange='changePhaserRate()' type='range' min='0' max='8' step='0.1' value='0'>
           Phaser Stereo
           <input id='phaser-stereo' onchange='changePhaserStereo()' type='range' min='0' max='180' step='1' value='0'>
-          ON
-          <input onclick='bypassPhaser()' type='checkbox' id='phaser-toggle'>
+          <section class='active-check'>
+            Active
+            <input onclick='bypassPhaser()' type='checkbox' id='phaser-toggle'>
+          </section>
 
           </input>
 
         </section>
 
         <section id='overdrive-settings'>
+          <span class='effect-title'>Overdrive</span>
           Drive
           <input id='overdrive-drive-slider' onchange='changeOverDriveDrive()' type='range' min='0.01' max='1' step='0.01' value='0.01'>
           Output Gain
@@ -130,18 +134,21 @@
             <option value='4'>4</option>
             <option value='5'>5</option>
           </select>
-          ON
-          <input onclick='bypassOverDrive()' type="checkbox" id='overdrive-toggle'>
-
+          <section class='active-check'>
+            Active
+            <input onclick='bypassOverDrive()' type="checkbox" id='overdrive-toggle'>
+          </section>
           </input>
         </section>
 
         <section id='reverb-settings'>
+          <span class='effect-title'>Reverb</span>
           Wet
           <input onChange='changeReverbWet()' id='reverb-wet-slider' type='range' min='0' max='1', step='0.05'>
-
-          ON
-          <input onchange='bypassReverb()' type='checkbox' id='reverb-toggle'>
+          <section class='active-check'>
+            Active
+            <input onchange='bypassReverb()' type='checkbox' id='reverb-toggle'>
+          </section>
 
         </input>
 
@@ -149,6 +156,7 @@
         </section >
 
         <section id='filter-settings'>
+          <span class='effect-title'>Filter</span>
           Cutoff
           <input id='filter-cutoff-slider' onchange='changeFilterFrequency()' type='range' min='0' max='20000' step='1' value='0'>
 
