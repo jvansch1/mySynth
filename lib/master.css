@@ -124,6 +124,8 @@ table {
 	vertical-align: middle;
 	margin-top: 20px;
   box-shadow: 5px 5px 5px black;
+	position: relative;
+	right: 120px;
 }
 
 #key-and-env-container {
@@ -310,4 +312,27 @@ select.soflow, select#soflow-color {
 
 input[type=checkbox] {
     margin-left: 10px;
+}
+
+.key-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 165px;
+}
+
+#labels {
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.81) 24%,rgba(236,236,236,0.37) 79%,rgba(229,229,229,0.37) 100%); /* Chrome10-25,Safari5.1-6 */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-weight: 600;
+	padding: 10px;
+	padding-bottom: 10px;
+	padding-top: 24px;
+	position: relative;
+	left: 100px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	box-shadow: 5px 5px 5px black;
 }
