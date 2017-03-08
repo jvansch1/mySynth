@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="lib/my_synth.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tunajs/0.4.4/tuna-min.js" type="text/javascript"></script>
-    <script type="text/javascript" src='lib/main.js'>
+    <script src="lib/my_synth.js" charset="utf-8"></script>
     </script>
     <link rel="stylesheet" href="lib/master.css">
     <title></title>
@@ -15,21 +14,15 @@
     <div id='logo-container'>
       <img id='logo' src='images/cooltext234319494035661.png'></img>
     </div>
-    <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-      setup();
-      draw();
-    })
-    </script>
     <section id='key-and-env-container'>
       <section id='main-controls'>
-        <button onclick='octaveUp();'>
+        <!-- <button id='octave-up'>
           Octave Up
         </button>
-        <button onclick='octaveDown();'>
+        <button id='octave-down'>
           Octave Down
-        </button>
-        <select class='soflow'id='wave-select' onChange='changeWaveForm()'>
+        </button> -->
+        <select class='soflow'id='wave-select'>
           <option value="sine">sine</option>
           <option value="square">square</option>
           <option value="sawtooth">saw</option>
@@ -42,7 +35,7 @@
           <option value="triangle">triangle</option>
         </select>
         Volume
-        <input onchange='changeGain()'id='gain-setting' type='range' min='0.01' max='0.1' step='0.01' value='1'>
+        <input id='gain-setting' type='range' min='0.01' max='0.1' step='0.01' value='1'>
 
         Oscillator One Volume
         <input onchange='changeOscOneGain()'id='osc-one-gain' type='range' min='0' max='0.1' step='0.01' value='1'>
@@ -68,7 +61,7 @@
         <span>
 
           <p>A</p>
-          <input data-degree-range='180' class='dial' data-degree-offset='0' onchange='changeAttack()' id='attack-slider' type='range' min='0' max='2000' step='1' value='0'>
+          <input data-degree-range='180' class='dial' data-degree-offset='0' id='attack-slider' type='range' min='0' max='2000' step='1' value='0'>
 
         </input>
       </span>
@@ -76,7 +69,7 @@
       <span>
 
         <p>D</p>
-        <input onchange='changeDecay()' id='decay-slider' type='range' min='0' max='2000' step='1' value='0'>
+        <input id='decay-slider' type='range' min='0' max='2000' step='1' value='0'>
 
       </input>
     </span>
@@ -84,7 +77,7 @@
     <span>
 
       <p>S</p>
-      <input onchange='changeSustain()' id='sustain-slider' type='range' min='0' max='1' step='0.05' value='0.2'>
+    <input id='sustain-slider' type='range' min='0' max='1' step='0.05' value='0.2'>
 
     </input>
   </span>
@@ -104,14 +97,14 @@
       <section id='delay-settings'>
         <span class='effect-title'>Delay</span>
         Delay Time
-        <input id='delay-slider' onchange='changeDelayTime()' type='range' min='0' max='1' step='0.01' value='0'>
+        <input id='delay-slider' type='range' min='0' max='1' step='0.01' value='0'>
         Feedback delay
-        <input id='delay-feedback-slider' onchange='changeDelayFeedback()' type='range' min='0' max='1' step='0.01' value='0'>
+        <input id='delay-feedback-slider' type='range' min='0' max='1' step='0.01' value='0'>
         Wet
-        <input id='delay-wet-slider' onchange='changeDelayWet()' type='range' min='0' max='1' step='0.01' value='0'>
+        <input id='delay-wet-slider' type='range' min='0' max='1' step='0.01' value='0'>
         <section class='active-check'>
           Active
-          <input onclick='bypassDelay()'id='delay-toggle' type="checkbox">
+          <input id='delay-toggle' type="checkbox">
         </section>
 
       </input>
@@ -121,16 +114,16 @@
         <section id='phaser-settings'>
           <span class='effect-title'>Phaser</span>
           Phaser Depth
-          <input id='phaser-depth' onchange='changePhaserDepth()' type='range' min='0' max='1' step='0.01' value='0'>
+          <input id='phaser-depth' type='range' min='0' max='1' step='0.01' value='0'>
           Phaser feedback
-          <input id='phaser-feedback' onchange='changePhaserFeedback()' type='range' min='0' max='1' step='0.01' value='0'>
+          <input id='phaser-feedback' type='range' min='0' max='1' step='0.01' value='0'>
           Phaser Rate
-          <input id='phaser-rate' onchange='changePhaserRate()' type='range' min='0' max='8' step='0.1' value='0'>
+          <input id='phaser-rate' type='range' min='0' max='8' step='0.1' value='0'>
           Phaser Stereo
-          <input id='phaser-stereo' onchange='changePhaserStereo()' type='range' min='0' max='180' step='1' value='0'>
+          <input id='phaser-stereo' type='range' min='0' max='180' step='1' value='0'>
           <section class='active-check'>
             Active
-            <input onclick='bypassPhaser()' type='checkbox' id='phaser-toggle'>
+            <input type='checkbox' id='phaser-toggle'>
           </section>
 
           </input>
@@ -140,12 +133,12 @@
         <section id='overdrive-settings'>
           <span class='effect-title'>Overdrive</span>
           Drive
-          <input id='overdrive-drive-slider' onchange='changeOverDriveDrive()' type='range' min='0.01' max='1' step='0.01' value='0.01'>
+          <input id='overdrive-drive-slider' type='range' min='0.01' max='1' step='0.01' value='0.01'>
           Output Gain
-          <input id='overdrive-output-slider' onchange='changeOverDriveGain()' type='range' min='0.01' max='1' step='0.01' value='0.01'>
+          <input id='overdrive-output-slider' type='range' min='0.01' max='1' step='0.01' value='0.01'>
           Curve Amount
-          <input id='overdrive-curve-slider' onchange='changeOverDriveCurve()' type='range' min='0.01' max='1' step='0.01' value='0.01'>
-          <select class='soflow'id='drive-type'onchange='changeOverDriveType()'>
+          <input id='overdrive-curve-slider'  type='range' min='0.01' max='1' step='0.01' value='0.01'>
+          <select class='soflow'id='drive-type'>
             <option value='0'>0</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
@@ -155,7 +148,7 @@
           </select>
           <section class='active-check'>
             Active
-            <input onclick='bypassOverDrive()' type="checkbox" id='overdrive-toggle'>
+            <input type="checkbox" id='overdrive-toggle'>
           </section>
           </input>
         </section>
@@ -163,12 +156,12 @@
         <section id='reverb-settings'>
           <span class='effect-title'>Reverb</span>
           Wet
-          <input onChange='changeReverbWet()' id='reverb-wet-slider' type='range' min='0' max='1', step='0.05'>
+          <input id='reverb-wet-slider' type='range' min='0' max='1', step='0.05'>
 
         </input>
         <section class='active-check'>
           Active
-          <input onchange='bypassReverb()' type='checkbox' id='reverb-toggle'>
+          <input type='checkbox' id='reverb-toggle'>
         </section>
 
 
@@ -177,16 +170,16 @@
         <section id='filter-settings'>
           <span class='effect-title'>Filter</span>
           Cutoff
-          <input id='filter-cutoff-slider' onchange='changeFilterFrequency()' type='range' min='0' max='20000' step='1' value='0'>
+          <input id='filter-cutoff-slider' type='range' min='0' max='20000' step='1' value='0'>
 
           Q
-          <input id='filter-Q-slider' onchange='changeFilterQ()' type='range' min='1' max='100' step='0.01' value='1'>
+          <input id='filter-Q-slider' type='range' min='1' max='100' step='0.01' value='1'>
 
           Gain
-          <input id='filter-gain-slider' onchange='changeFilterGain()' type='range' min='0.001' max='3.4028234663852886' step='0.1' value='1.7009999752044678'>
+          <input id='filter-gain-slider' type='range' min='0.001' max='3.4028234663852886' step='0.1' value='1.7009999752044678'>
 
           Filter Type
-          <select class='soflow' id='filter-type-dropdown' onchange='changeFilterType()'>
+          <select class='soflow' id='filter-type-dropdown'>
             <option value='lowpass'>lowpass</option>
             <option value='highpass'>highpass</option>
             <option value='bandpass'>bandpass</option>
@@ -204,5 +197,12 @@
       <section id='canvas-container'>
         <canvas id="oscilloscope" width="1000px" height="100"></canvas>
       </section>
+      <script type="text/javascript">
+      // document.addEventListener("load", () => {
+      //   debugger
+      //   setup();
+      //   draw();
+      // });
+      </script>
   </body>
 </html>
