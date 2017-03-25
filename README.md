@@ -124,3 +124,59 @@ function connectNodes(osc, osc2) {
 }
 
 ```
+
+## Analyzer
+
+Web Audio API and HTML5 Canvas are utilized in order to display a real-time waveform representing mySynth's current settings. A new Web Audio API analyser node is created and a Fast Fourier Transform(fft) value is set to determine the frequency domain which will be analyzed(default is 2048). This fft value is then passed in to create an Uint8Array(An array of 8 bit unsigned integers) in which all elements will be initialized to 0. The getByteTimeDomainData function will copy the current waveform into our array. This will be the basis of the waveform.
+
+```
+
+let analyser = audioCtx.createAnalyser();
+let bufferLength = analyser.fftSize = 2048;
+let dataArray = new Uint8Array(bufferLength);
+analyser.getByteTimeDomainData(dataArray);
+
+```
+
+A Canvas draw method is then used to iterate through the dataArray and represent it on the display.
+
+```
+
+let canvas;
+let canvasCtx;
+document.addEventListener("DOMContentLoaded", () => {
+  canvas = document.getElementById("oscilloscope");
+  canvasCtx = canvas.getContext("2d");
+})
+
+function draw() {
+  canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+  let drawVisual = requestAnimationFrame(draw);
+  analyser.getByteTimeDomainData(dataArray);
+  canvasCtx.fillStyle = 'rgba(255, 255, 255, 0.0)';
+  canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+  canvasCtx.lineWidth = 1;
+  canvasCtx.strokeStyle = 'rgb(68, 255, 0)';
+  canvasCtx.beginPath();
+
+  var sliceWidth = canvas.width * 1.0 / bufferLength;
+  var x = 0;
+
+  for (var i = 0; i < bufferLength; i++) {
+
+    var v = dataArray[i] / 128.0;
+    var y = v * canvas.height / 2;
+    if (i === 0) {
+      canvasCtx.moveTo(x, y);
+    } else {
+      canvasCtx.lineTo(x, y);
+    }
+
+    x += sliceWidth;
+  }
+  canvasCtx.lineTo(canvas.width, canvas.height);
+  canvasCtx.stroke();
+
+};
+
+```
