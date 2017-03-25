@@ -8,7 +8,7 @@ mySynth is a polyphonic digital synthesizer created using JavaScript. Additional
 
 ## Web Audio API
 
-The main functionality of mySynth comes from JavaScript's Web Audio API. A jQuery event listener is used to detect keypresses. Upon a keypress, two oscillator object will be created corresponding to the note activated. On keyup, these oscillator objects will be destroyed.
+The main functionality of mySynth comes from JavaScript's Web Audio API. A jQuery event listener is used to detect keypresses. Each key stores the frequency which should be played upon the activation of the corresponding note. Upon a keypress, two Web Audio API oscillator objects will be created with the appropriate frequency and the note will begin to play. On keyup, these oscillator objects will be destroyed and note will stop.
 
 ```
 
