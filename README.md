@@ -8,7 +8,16 @@ mySynth is a polyphonic digital synthesizer created using JavaScript. Additional
 
 ## Web Audio API
 
-The main functionality of mySynth comes from JavaScript's Web Audio API. A jQuery event listener is used to detect keypresses. Each key stores the frequency which should be played upon the activation of the corresponding note. Upon a keypress, two Web Audio API oscillator objects will be created with the appropriate frequency and the note will begin to play. On keyup, these oscillator objects will be destroyed and note will stop.
+The main functionality of mySynth comes from JavaScript's Web Audio API. Web Audio API uses an audio context which outputs to a designated output source(in this case, the computer speakers). Oscillator Nodes or Audio Buffer Nodes can be connected to the Audio Context to output sound.
+
+```
+
+const audioCtx = new (window.AudioContext)();
+export default audioCtx;
+
+```
+
+A jQuery event listener is used to detect keypresses. Each key stores the frequency which should be played upon the activation of the corresponding note. Upon a keypress, two Web Audio API oscillator objects will be created with the appropriate frequency and the note will begin to play. On keyup, these oscillator objects will be destroyed and note will stop.
 
 ```
 
@@ -35,3 +44,7 @@ $(document).on('keyup', e => {
 })
 
 ```
+
+## Effects
+
+The effects chain(delay, phaser, overdrive, reverb, filter) is all implemented using Tuna.js
