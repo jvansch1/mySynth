@@ -4,6 +4,6 @@
 
 My synth is a polyphonic digital synthesizer created using JavaScript. Additional libraries include jQuery, Web Audio API, and Tuna.js.
 
-![mySynth](/MySynth.png)
+![mySynth](/mySynth.jpg)
 
 ## Web Audio API
