@@ -189,16 +189,27 @@ canvas {
 	bottom: 40px;
 }
 
-input[type=range]{
+input[type=range] {
     -webkit-appearance: none;
+		-moz-appearance: none;
+		width: 190px;
 		padding-top: 5px;
 		padding-bottom: 10px;
+		padding-right: 10px;
 		background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 0%,rgba(236,236,236,0) 0%,rgba(229,229,229,0) 100%); /* Chrome10-25,Safari5.1-6 */
 		/*background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.81) 24%,rgba(236,236,236,0.37) 100%,rgba(229,229,229,0.37) 100%); /* Chrome10-25,Safari5.1-6 */*/
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
+    /*width: 300px;*/
+    height: 5px;
+    background: black;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-track {
+		/*width: 300px;*/
     height: 5px;
     background: black;
     border: none;
@@ -215,12 +226,26 @@ input[type=range]::-webkit-slider-thumb {
     margin-top: -6px;
 }
 
+input[type=range]::-moz-range-thumb {
+    -moz-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -6px;
+}
+
 input[type=range]:focus {
     outline: none;
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
     background: black;
+}
+
+#sustain-slider {
+	margin-bottom: 10px;
 }
 
 #main-controls {
@@ -266,10 +291,15 @@ option {
 
 select.soflow, select#soflow-color {
    -webkit-appearance: button;
+   -moz-appearance: none;
    -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
    -webkit-padding-end: 20px;
+   -moz-padding-end: 20px;
    -webkit-padding-start: 2px;
+   -moz-padding-start: 2px;
    -webkit-user-select: none;
    background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
    background-position: 97% center;
