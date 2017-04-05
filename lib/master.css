@@ -435,14 +435,14 @@ input[type=checkbox] {
 
 #slide-logo {
 	position: relative;
-	bottom: 90px;
+	bottom: 80px;
 	margin: 0 auto;
 	display: block;
 }
 
 #text-one {
 	position: relative;
-	bottom: 90px;
+	bottom: 80px;
 	font-size: 24px;
 	width: 650px;
 	margin: 0 auto;
@@ -467,6 +467,7 @@ input[type=checkbox] {
 #tutorial-header {
 	padding: 5px 10px 5px 10px;
 	color: white;
+	font-size: 24px;
 	background: black;
 	width: 980px;
 	display: flex;
