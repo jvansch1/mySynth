@@ -406,7 +406,7 @@ input[type=checkbox] {
 	padding: 10px;
 }
 
-#next-and-prev:hover {
+#next-and-prev i:hover {
 	cursor: pointer;
 }
 
