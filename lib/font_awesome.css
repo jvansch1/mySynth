@@ -1965,3 +1965,7 @@
 .fa-times:hover {
   cursor: pointer;
 }
+
+.fa-arrow-left, .fa-arrow-right {
+  font-size: 30px;
+}
