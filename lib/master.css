@@ -419,7 +419,7 @@ input[type=checkbox] {
 .instruction-image {
 	display: block;
 	width: 475px;
-	height: 310px;
+	height: 300px;
 	margin: 0 auto;
 	padding-left: 20px;
 }
@@ -451,7 +451,7 @@ input[type=checkbox] {
 #text-five {
 	font-size: 24px;
 	position: relative;
-	bottom: 90px;
+	bottom: 80px;
 	width: 650px;
 	margin: 0 auto;
 }
