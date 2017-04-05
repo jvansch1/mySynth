@@ -430,6 +430,14 @@ input[type=checkbox] {
 	margin: 0 auto;
 }
 
+#text-one {
+	position: relative;
+	bottom: 150px;
+	font-size: 24px;
+	width: 650px;
+	margin: 0 auto;
+}
+
 #transparent {
 	height: 100%;
 	width: 100%;
