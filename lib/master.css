@@ -413,6 +413,7 @@ input[type=checkbox] {
 }
 
 .instruction-image {
+	display: block;
 	width: 475px;
 	height: 325px;
 	margin: 0 auto;
@@ -422,7 +423,7 @@ input[type=checkbox] {
 }
 
 .image-container {
-	width: 100%;
+	width: 1000px;
 }
 
 #image-one {
@@ -430,9 +431,16 @@ input[type=checkbox] {
 	margin: 0 auto;
 }
 
+#slide-logo {
+	position: relative;
+	bottom: 90px;
+	margin: 0 auto;
+	display: block;
+}
+
 #text-one {
 	position: relative;
-	bottom: 150px;
+	bottom: 90px;
 	font-size: 24px;
 	width: 650px;
 	margin: 0 auto;
@@ -441,7 +449,7 @@ input[type=checkbox] {
 #text-five {
 	font-size: 24px;
 	position: relative;
-	bottom: 150px;
+	bottom: 90px;
 	width: 650px;
 	margin: 0 auto;
 }
