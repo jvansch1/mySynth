@@ -384,9 +384,12 @@ input[type=checkbox] {
 	border: 1px solid black;
 	opacity: 1;
 	z-index: 1000000000;
-	margin-left: 25%;
-	margin-right: 25%;
 	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
 	top: 200px;
 	background: white;
 	height: 450px;
