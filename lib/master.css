@@ -477,3 +477,9 @@ input[type=checkbox] {
 #tutorial-header p {
 	font-weight: bold;
 }
+
+b {
+	font-weight: 900;
+	text-decoration: underline;
+	color: red;
+}
