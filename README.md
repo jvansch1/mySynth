@@ -3,7 +3,7 @@
 ## Overview
 
 <!-- [mysynth Live](http://johnvanschultz.site/mySynth) -->
-<a href='http://johnvanschultz.site/mySynth'>
+<a href="http://johnvanschultz.site/mySynth">mySynth</a>
 
 mySynth is a polyphonic digital synthesizer created using JavaScript. Additional libraries include jQuery, Web Audio API, and Tuna.js.
 
