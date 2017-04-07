@@ -11,7 +11,7 @@ mySynth is a polyphonic digital synthesizer created using JavaScript. Additional
 
 ## Technolgies
 
-* Javascript
+* JavaScript
 * jQuery
 * Web Audio Api
 * Tuna.js
