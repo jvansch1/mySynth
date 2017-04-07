@@ -139,7 +139,7 @@ function connectNodes(osc, osc2) {
 
 ## Analyzer
 
-Web Audio API and HTML5 Canvas are utilized in order to display a real-time waveform representing mySynth's current settings. A new Web Audio API analyser node is created and a Fast Fourier Transform(fft) value is set to determine the frequency domain which will be analyzed(default is 2048). This fft value is then passed in to create an Uint8Array(An array of 8 bit unsigned integers) in which all elements will be initialized to 0. The getByteTimeDomainData function will copy the current waveform into our array. This will be the basis of the waveform.
+Web Audio API and HTML5 Canvas are utilized in order to display a real-time waveform representing mySynth's current settings. A new ```Web Audio API analyser node``` is created and a ```Fast Fourier Transform(fft)``` value is set to determine the frequency domain which will be analyzed(default is 2048). This fft value is then passed in to create an ```Uint8Array(An array of 8 bit unsigned integers)``` in which all elements will be initialized to 0. The getByteTimeDomainData function will copy the current waveform into our array. This will be the basis of the waveform.
 
 ```
 
