@@ -7,7 +7,7 @@
 
 mySynth is a polyphonic digital synthesizer created using JavaScript. Additional libraries include jQuery, Web Audio API, and Tuna.js.
 
-![mySynth](images/mySynth.jpg)
+![mySynth](assets/images/mySynth.jpg)
 
 ## Technolgies
 
