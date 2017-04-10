@@ -275,7 +275,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 button {
   font-weight: 600;
-  background-image: url('../images/metallic-background_1048-1942.jpg');
+  background-image: url('../assets/images/metallic-background_1048-1942.jpg');
   border-radius: 1px;
   border-style: none;
   width: 150px;
