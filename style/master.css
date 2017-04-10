@@ -483,3 +483,30 @@ b {
 	text-decoration: underline;
 	color: red;
 }
+
+#preset-list {
+	display: flex;
+	justify-content: space-between;
+	width: 350px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#preset-list li {
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.81) 24%,rgba(236,236,236,0.37) 79%,rgba(229,229,229,0.37) 100%); /* Chrome10-25,Safari5.1-6 */
+	padding: 5px 10px 5px 10px;
+}
+
+#preset-list li:hover {
+	cursor: pointer;
+}
+
+#preset-title {
+	color: white;
+	text-align: center;
+	padding-top: 10px;
+	width: 600px;
+	margin: 0 auto;
+	font-size: 36px;
+	text-decoration: underline;
+}
