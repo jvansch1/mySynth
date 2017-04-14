@@ -22,7 +22,7 @@ mySynth is a polyphonic digital synthesizer created using JavaScript. Additional
 
 The main functionality of mySynth comes from JavaScript's Web Audio API. Web Audio API uses an audio context which outputs to a designated output source(in this case, the computer speakers). Oscillator Nodes or Audio Buffer Nodes can be connected to the Audio Context to output sound.
 
-```
+```javascript
 
 const audioCtx = new (window.AudioContext)();
 export default audioCtx;
@@ -31,7 +31,7 @@ export default audioCtx;
 
 A jQuery event listener is used to detect keypresses. Each key stores the frequency which should be played upon the activation of the corresponding note. Upon a keypress, two Web Audio API oscillator objects will be created with the appropriate frequency and the note will begin to play. On keyup, these oscillator objects will be destroyed and note will stop.
 
-```
+```javascript
 
 $(document).on("keydown", e => {
   let key = $("div[data-key-id = " + e.keyCode + "]")
@@ -61,7 +61,7 @@ $(document).on('keyup', e => {
 
 The effects chain(delay, phaser, overdrive, reverb, filter) is implemented using the Tuna.js library. An instance of the Tuna class is connected to Web Audio API's Audio context, which allows all Tuna.js effects to be added as nodes between the oscillator node and our Audio Context output.
 
-```
+```javascript
 
 const tuna = new Tuna(audioCtx);
 export const delay = new tuna.Delay({
@@ -112,7 +112,7 @@ export const filter = new tuna.Filter({
 
 Since a new oscillator object is created on each keypress, all nodes to be re-connected to the new oscillator. This is done using the connectNodes helper method.
 
-```
+```javascript
 
 function connectNodes(osc, osc2) {
   oscVolume.gain.value = oscGain;
@@ -141,7 +141,7 @@ function connectNodes(osc, osc2) {
 
 Web Audio API and HTML5 Canvas are utilized in order to display a real-time waveform representing mySynth's current settings. A new ```Web Audio API analyser node``` is created and a ```Fast Fourier Transform(fft)``` value is set to determine the frequency domain which will be analyzed(default is 2048). This fft value is then passed in to create an ```Uint8Array(An array of 8 bit unsigned integers)``` in which all elements will be initialized to 0. The getByteTimeDomainData function will copy the current waveform into our array. This will be the basis of the waveform.
 
-```
+```javascript
 
 let analyser = audioCtx.createAnalyser();
 let bufferLength = analyser.fftSize = 2048;
@@ -152,7 +152,7 @@ analyser.getByteTimeDomainData(dataArray);
 
 A Canvas draw method is then used to iterate through the dataArray and represent it on the display.
 
-```
+```javascript
 
 let canvas;
 let canvasCtx;
